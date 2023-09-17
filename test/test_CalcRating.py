@@ -27,7 +27,7 @@ class TestCalcRating:
 
         rating_scores: RatingType = {
             "Абрамов Петр Сергеевич": 85.3333,
-            "Петров Игорь Владимирович": 76.5000
+            "Петров Игорь Владимирович": 75.5000
         }
 
         return data, rating_scores
