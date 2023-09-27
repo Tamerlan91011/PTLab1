@@ -21,10 +21,17 @@ class TestStudentCalculator:
         return data, result
 
     def test_init_student_calculator(self,
-                              input_data: tuple[list[dict[str, set]], int]) -> None:
+                                     input_data:
+                                         tuple[
+                                             list[dict[str, set]],
+                                             int]) -> None:
         calc = StudentCalculator(input_data[0])
         assert input_data[0] == calc.studentsList
 
-    def test_get_best_student_count(self, input_data: tuple[list[dict[str, set]], int]) -> None:
+    def test_get_best_student_count(self,
+                                    input_data:
+                                        tuple[
+                                            list[dict[str, set]],
+                                            int]) -> None:
         bestCount = StudentCalculator(input_data[0]).getBestStudentsCount()
         assert pytest.approx(bestCount) == input_data[1]
