@@ -5,7 +5,7 @@ import pytest
 
 class TestStudentCalculator:
     @pytest.fixture()
-    def input_data(self) -> tuple[list[dict[str, set]], int]:
+    def input_data(self) -> tuple[list[dict[str, dict[str, int]]], int]:
         data = [
             {
                 "Иванов Иван Иванович":
@@ -23,7 +23,7 @@ class TestStudentCalculator:
     def test_init_student_calculator(self,
                                      input_data:
                                          tuple[
-                                             list[dict[str, set]],
+                                             list[dict[str, dict[str, int]]],
                                              int]) -> None:
         calc = StudentCalculator(input_data[0])
         assert input_data[0] == calc.studentsList
@@ -31,7 +31,7 @@ class TestStudentCalculator:
     def test_get_best_student_count(self,
                                     input_data:
                                         tuple[
-                                            list[dict[str, set]],
+                                            list[dict[str, dict[str, int]]],
                                             int]) -> None:
         bestCount = StudentCalculator(input_data[0]).getBestStudentsCount()
         assert pytest.approx(bestCount) == input_data[1]
